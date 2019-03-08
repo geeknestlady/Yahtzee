@@ -7,7 +7,7 @@ namespace Yahtzee
         static void Main(string[] args)
         {
           
-            int[] diceRolls = new int[6];
+            int[] diceRolls = new int[5];
             diceRolls = RandomDiceRoll(diceRolls);
 
             for (int i = 0; i < diceRolls.Length; i++)
@@ -18,15 +18,12 @@ namespace Yahtzee
             Console.ReadLine();
         }
         public static int[] RandomDiceRoll (int[] diceRolls) 
-        {
-            diceRolls = new int[6];
-            for (int i = 0; i < diceRolls.Length; i++)
+        {            
+            for (int i = 0; i < 5; i++)
             {
                 int randomDice = new Random().Next(1, 6);
-                int dice = randomDice;
-                diceRolls = new int[] { dice };
-                diceRolls[i] = dice;
-                
+                int dice = randomDice;                
+                diceRolls[i] = dice;              
 
             }
             return diceRolls;
