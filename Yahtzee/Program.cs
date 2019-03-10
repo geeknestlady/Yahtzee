@@ -19,24 +19,47 @@ namespace Yahtzee
                     Console.WriteLine("Dice {0} = {1}", i, diceRolls[i]);
                    
                  }
-                Console.WriteLine("Which numbers do you want to keep?");
-                Console.WriteLine("If there are multiple numbers use a comma");
+                Console.WriteLine("Which dice do you want to reroll?");
+                Console.WriteLine("If there are multiple dice use a comma");
                 string keptDiceInput = Console.ReadLine();
                 string[] keptDiceString = keptDiceInput.Split(',');
                 int[] keptDiceInt = new int[keptDiceString.Length];
                 for (int j = 0; j < keptDiceInt.Length; j++)
+                 {
+                     
+                         if (diceRolls[j] != keptDiceInt[j])
+                         {
+                             diceRolls[j] = Dice();
+                         }
+                        else
+                        {
+                            diceRolls[j] = diceRolls[j];
+                        }
+                }
+                
+              
+                for (int i = 0; i < diceRolls.Length; i++)
                 {
+                    Console.WriteLine("Dice {0} = {1}", i, diceRolls[i]);
+                }
+                Console.WriteLine("Which dice do you want to reroll?");
+                Console.WriteLine("If there are multiple dice use a comma");
+                keptDiceInput = Console.ReadLine();
+                keptDiceString = keptDiceInput.Split(',');
+                keptDiceInt = new int[keptDiceString.Length];
+                for (int j = 0; j < keptDiceInt.Length; j++)
+                {
+
                     if (diceRolls[j] != keptDiceInt[j])
                     {
                         diceRolls[j] = Dice();
                     }
-                    else
-                    {
-                        diceRolls[j] = diceRolls[j];
-                    }
-                    Console.WriteLine("Dice {0} = {1}", j, diceRolls[j]);
+                                      
                 }
-
+                for (int i = 0; i < diceRolls.Length; i++)
+                {
+                    Console.WriteLine("Dice {0} = {1}", i, diceRolls[i]);
+                }
 
                 Console.ReadLine();
              }
