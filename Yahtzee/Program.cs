@@ -53,7 +53,7 @@ namespace Yahtzee
                 }
                 for (int i = 0; i < secondDiceRolls.Length; i++)
                 {
-                    Console.WriteLine("Dice {0} = {1}", i, secondDiceRolls[i]);
+                    Console.WriteLine("Dice {0} = {1}", diceNameArray[i], secondDiceRolls[i]);
 
                 }
                 Console.WriteLine("Which dice do you want to keep and which do you want to reroll?");
@@ -87,7 +87,7 @@ namespace Yahtzee
                 Console.WriteLine("Your final roll is:");
                 for (int i = 0; i < thirdDiceRolls.Length; i++)
                 {                    
-                    Console.WriteLine("Dice {0} = {1}", i, thirdDiceRolls[i]);
+                    Console.WriteLine("Dice {0} = {1}", diceNameArray[i], thirdDiceRolls[i]);
                 }
                 int total = DiceCount(thirdDiceRolls);
                 Console.WriteLine($"Your total score is {total}");
@@ -168,7 +168,7 @@ namespace Yahtzee
                 return true;
 
             }
-            else if (result == "9")
+            else if (result == "e")
             {
                 return false;
             }
